@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "dependencies": {
+    "class": "github:lexarx/class",
+    "collections": "github:lexarx/collections",
+    "event": "github:lexarx/event",
+    "todomvc-app-css": "^2.0.6",
+    "views": "github:lexarx/views",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.14.1"
+  }
+}
