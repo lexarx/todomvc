@@ -16,8 +16,7 @@ module.exports = StackPanel.extend({
 		this.newTodoInput = new Element({
 			tag: 'input',
 			class: 'new-todo',
-			attributes: {placeholder: 'What needs to be done?'},
-			autofocus: true
+			attributes: {placeholder: 'What needs to be done?', autofocus: true}
 		}).element;
 		this.newTodoInput.addEventListener('keydown', this.onNewTodoInputKeyDown.bind(this));
 
