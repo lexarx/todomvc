@@ -41,7 +41,7 @@ module.exports = StackPanel.extend({
 	},
 
 	onCompletedCheckboxChange: function(event) {
-		this.data.toggle(event.target.checked);
+		this.data.set('completed', event.target.checked);
 	},
 
 	onTitleDoubleClick: function() {
@@ -65,7 +65,7 @@ module.exports = StackPanel.extend({
 	},
 
 	onTitleEditorBlur: function() {
-		this.data.setTitle(this.titleInput.value);
+		this.data.set('title', this.titleInput.value);
 		this.toggleEditing(false);
 	},
 	

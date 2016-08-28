@@ -29,7 +29,7 @@ module.exports = Observable.extend({
 			title: title,
 			completed: false
 		});
-		this.setVisibility(todoItem);
+		this.set('visibility', todoItem);
 		this.todos.add(todoItem);
 	},
 
@@ -71,7 +71,7 @@ module.exports = Observable.extend({
 
 	toggleAll: function(completed) {
 		this.todos.each(function(todoItem) {
-			todoItem.toggle(completed);
+			todoItem.set('completed', completed);
 		});
 	},
 
@@ -90,7 +90,7 @@ module.exports = Observable.extend({
 	},
 
 	setVisibility: function(todoItem) {
-		todoItem.setVisibility(this.getVisibility(todoItem));
+		todoItem.set('visible', this.getVisibility(todoItem));
 	},
 
 	updateActiveTodoCount: function() {
@@ -100,10 +100,7 @@ module.exports = Observable.extend({
 				activeTodoCount++;
 			}
 		});
-		if (this.activeTodoCount !== activeTodoCount) {
-			this.activeTodoCount = activeTodoCount;
-			this.notifyChanged('activeTodoCount');
-		}
+		this.set('activeTodoCount', activeTodoCount);
 	},
 
 	onTodosChanged: function() {
